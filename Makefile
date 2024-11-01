@@ -15,19 +15,19 @@ install:
 # - Applies formatting to all `.py` files in the directory.
 # - Sets line length to 88 characters.
 format:
-	python3 -m black *.py --line-length 88
+	python -m black *.py --line-length 88
 
 # The 'process' target runs a data processing script.
 # - Takes $(RAW_DATA_PATH) as input (defined above).
 # - Calls `data_processing.py` with RAW_DATA_PATH as an argument.
 process: $(RAW_DATA_PATH)
-	@python3 data_processing.py $(RAW_DATA_PATH)
+	@python data_processing.py $(RAW_DATA_PATH)
 
 # The 'analyze' target runs a data analysis script.
 # - Takes $(PROCESSED_DATA) as input (defined above).
 # - Calls `data_analysis.py` with PROCESSED_DATA as an argument.
 analyze: $(PROCESSED_DATA)
-	@python3 data_analysis.py $(PROCESSED_DATA)
+	@python data_analysis.py $(PROCESSED_DATA)
 
 # The 'clean' target removes all processed data files and any PNG files.
 # - `rm -rf` deletes files in `processed_data/` and any PNGs in subdirectories.
