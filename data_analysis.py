@@ -27,9 +27,7 @@ info = buffer.getvalue()
 
 ## Write metrics to file
 with open("processed_data/summary.txt", "w") as outfile:
-    outfile.write(
-        f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
-    )
+    f"\n## Data Summary\n\n{summary}\n\n## Data Info\n\n{info}\n\n## Dataframe\n\n{data_head}"
 
 print("Data summary saved in processed_data folder!")
 
